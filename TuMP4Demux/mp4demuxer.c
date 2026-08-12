@@ -31,7 +31,7 @@ void parse_boxes(FILE *fp, uint64_t begin, uint64_t end) {
         memset(type, 0, 5);
         fread(type, 1, 4, fp);
 
-        printf("size32 == %d %s\n", boxSize, type);
+        printf("size == %d %s\n", boxSize, type);
         if (isEqual(type, "moov") || isEqual(type, "trak") || isEqual(type, "mdia") || isEqual(type, "minf") || isEqual(type, "stbl") || isEqual(type, "dinf")) {
             parse_boxes(fp, start + 8, start + boxSize);
         } else if (isEqual(type, "stsd")) {
