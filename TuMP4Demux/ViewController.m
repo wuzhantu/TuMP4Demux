@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#include "mp4demuxer.h"
 
 @interface ViewController ()
 
@@ -15,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"youvideo" ofType:@"mp4"];
+    const char *cpath = [path cStringUsingEncoding:NSUTF8StringEncoding];
+    mp4_open(path.fileSystemRepresentation);
 }
 
 

@@ -17,6 +17,7 @@
 		43980A7A302CC7A4007A61B6 /* TuMP4DemuxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A79302CC7A4007A61B6 /* TuMP4DemuxTests.m */; };
 		43980A84302CC7A4007A61B6 /* TuMP4DemuxUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A83302CC7A4007A61B6 /* TuMP4DemuxUITests.m */; };
 		43980A86302CC7A4007A61B6 /* TuMP4DemuxUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A85302CC7A4007A61B6 /* TuMP4DemuxUITestsLaunchTests.m */; };
+		43980A94302CC7D7007A61B6 /* mp4demuxer.c in Sources */ = {isa = PBXBuildFile; fileRef = 43980A93302CC7D6007A61B6 /* mp4demuxer.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		43980A7F302CC7A4007A61B6 /* TuMP4DemuxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuMP4DemuxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43980A83302CC7A4007A61B6 /* TuMP4DemuxUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuMP4DemuxUITests.m; sourceTree = "<group>"; };
 		43980A85302CC7A4007A61B6 /* TuMP4DemuxUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuMP4DemuxUITestsLaunchTests.m; sourceTree = "<group>"; };
+		43980A92302CC7D6007A61B6 /* mp4demuxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mp4demuxer.h; sourceTree = "<group>"; };
+		43980A93302CC7D6007A61B6 /* mp4demuxer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mp4demuxer.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 		43980A5C302CC7A2007A61B6 /* TuMP4Demux */ = {
 			isa = PBXGroup;
 			children = (
+				43980A93302CC7D6007A61B6 /* mp4demuxer.c */,
+				43980A92302CC7D6007A61B6 /* mp4demuxer.h */,
 				43980A5D302CC7A2007A61B6 /* AppDelegate.h */,
 				43980A5E302CC7A2007A61B6 /* AppDelegate.m */,
 				43980A60302CC7A2007A61B6 /* SceneDelegate.h */,
@@ -266,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43980A94302CC7D7007A61B6 /* mp4demuxer.c in Sources */,
 				43980A65302CC7A2007A61B6 /* ViewController.m in Sources */,
 				43980A5F302CC7A2007A61B6 /* AppDelegate.m in Sources */,
 				43980A70302CC7A4007A61B6 /* main.m in Sources */,
