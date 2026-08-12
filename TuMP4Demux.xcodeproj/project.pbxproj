@@ -18,6 +18,7 @@
 		43980A84302CC7A4007A61B6 /* TuMP4DemuxUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A83302CC7A4007A61B6 /* TuMP4DemuxUITests.m */; };
 		43980A86302CC7A4007A61B6 /* TuMP4DemuxUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A85302CC7A4007A61B6 /* TuMP4DemuxUITestsLaunchTests.m */; };
 		43980A94302CC7D7007A61B6 /* mp4demuxer.c in Sources */ = {isa = PBXBuildFile; fileRef = 43980A93302CC7D6007A61B6 /* mp4demuxer.c */; };
+		43980A98302CCA48007A61B6 /* 3-1 H264 NALU结构讲解.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 43980A97302CCA48007A61B6 /* 3-1 H264 NALU结构讲解.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		43980A85302CC7A4007A61B6 /* TuMP4DemuxUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuMP4DemuxUITestsLaunchTests.m; sourceTree = "<group>"; };
 		43980A92302CC7D6007A61B6 /* mp4demuxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mp4demuxer.h; sourceTree = "<group>"; };
 		43980A93302CC7D6007A61B6 /* mp4demuxer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mp4demuxer.c; sourceTree = "<group>"; };
+		43980A97302CCA48007A61B6 /* 3-1 H264 NALU结构讲解.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "3-1 H264 NALU结构讲解.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		43980A5C302CC7A2007A61B6 /* TuMP4Demux */ = {
 			isa = PBXGroup;
 			children = (
+				43980A97302CCA48007A61B6 /* 3-1 H264 NALU结构讲解.mp4 */,
 				43980A93302CC7D6007A61B6 /* mp4demuxer.c */,
 				43980A92302CC7D6007A61B6 /* mp4demuxer.h */,
 				43980A5D302CC7A2007A61B6 /* AppDelegate.h */,
@@ -245,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43980A6D302CC7A4007A61B6 /* LaunchScreen.storyboard in Resources */,
+				43980A98302CCA48007A61B6 /* 3-1 H264 NALU结构讲解.mp4 in Resources */,
 				43980A6A302CC7A4007A61B6 /* Assets.xcassets in Resources */,
 				43980A68302CC7A2007A61B6 /* Main.storyboard in Resources */,
 			);
