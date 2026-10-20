@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		437713433087AD89000B7152 /* Videodemuxer.m in Sources */ = {isa = PBXBuildFile; fileRef = 437713423087AD89000B7152 /* Videodemuxer.m */; };
 		43980A5F302CC7A2007A61B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A5E302CC7A2007A61B6 /* AppDelegate.m */; };
 		43980A62302CC7A2007A61B6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A61302CC7A2007A61B6 /* SceneDelegate.m */; };
 		43980A65302CC7A2007A61B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43980A64302CC7A2007A61B6 /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		437713413087AD89000B7152 /* Videodemuxer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Videodemuxer.h; sourceTree = "<group>"; };
+		437713423087AD89000B7152 /* Videodemuxer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Videodemuxer.m; sourceTree = "<group>"; };
 		43980A5A302CC7A2007A61B6 /* TuMP4Demux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuMP4Demux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43980A5D302CC7A2007A61B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43980A5E302CC7A2007A61B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				43980A97302CCA48007A61B6 /* 3-1 H264 NALU结构讲解.mp4 */,
 				43980A93302CC7D6007A61B6 /* mp4demuxer.c */,
 				43980A92302CC7D6007A61B6 /* mp4demuxer.h */,
+				437713413087AD89000B7152 /* Videodemuxer.h */,
+				437713423087AD89000B7152 /* Videodemuxer.m */,
 				43980A5D302CC7A2007A61B6 /* AppDelegate.h */,
 				43980A5E302CC7A2007A61B6 /* AppDelegate.m */,
 				43980A60302CC7A2007A61B6 /* SceneDelegate.h */,
@@ -275,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				437713433087AD89000B7152 /* Videodemuxer.m in Sources */,
 				43980A94302CC7D7007A61B6 /* mp4demuxer.c in Sources */,
 				43980A65302CC7A2007A61B6 /* ViewController.m in Sources */,
 				43980A5F302CC7A2007A61B6 /* AppDelegate.m in Sources */,

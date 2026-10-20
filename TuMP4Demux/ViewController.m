@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #include "mp4demuxer.h"
+#import "Videodemuxer.h"
 
 @interface ViewController ()
 
@@ -19,7 +20,10 @@
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"3-1 H264 NALU结构讲解" ofType:@"mp4"];
     const char *cpath = [path cStringUsingEncoding:NSUTF8StringEncoding];
-    mp4_open(path.fileSystemRepresentation);
+//    mp4_open(path.fileSystemRepresentation);
+    
+    Videodemuxer *demux = Videodemuxer.new;
+    [demux demuxVideo];
 }
 
 
