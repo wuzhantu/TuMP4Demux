@@ -15,6 +15,11 @@ typedef struct {
 
 @implementation Videodemuxer
 
+uint64_t getNumberValue(const uint8_t *ptr) {
+    uint64_t size = ((uint32_t)ptr[0] << 24) | ((uint32_t)ptr[1] << 16) | ((uint32_t)ptr[2] << 8) | (uint32_t)ptr[3];
+    return size;
+}
+
 void findType(const uint8_t *bytes, char *desType, uint64_t start, uint64_t end, VideoBox *box) {
     while (start + 8 <= end) {
         int headerSize = 8;
@@ -59,19 +64,53 @@ void findType(const uint8_t *bytes, char *desType, uint64_t start, uint64_t end,
     
     VideoBox stsdBox = {0, 0, 0};
     findType(bytes, "stsd", stblBox.start + stblBox.headerSize, stblBox.start + stblBox.size, &stsdBox);
-    NSLog(@"stsd %llu", stsdBox.size);
     
     VideoBox sttsBox = {0, 0, 0};
     findType(bytes, "stts", stblBox.start + stblBox.headerSize, stblBox.start + stblBox.size, &sttsBox);
-    NSLog(@"stts %llu", sttsBox.size);
     
     VideoBox cttsBox = {0, 0, 0};
     findType(bytes, "ctts", stblBox.start + stblBox.headerSize, stblBox.start + stblBox.size, &cttsBox);
-    NSLog(@"ctts %llu", cttsBox.size);
     
     VideoBox stssBox = {0, 0, 0};
     findType(bytes, "stss", stblBox.start + stblBox.headerSize, stblBox.start + stblBox.size, &stssBox);
-    NSLog(@"stss %llu", stssBox.size);
+    
+    VideoBox stcoBox = {0, 0, 0};
+    findType(bytes, "stco", stblBox.start + stblBox.headerSize, stblBox.start + stblBox.size, &stcoBox);
+    
+    VideoBox stscBox = {0, 0, 0};
+    findType(bytes, "stsc", stblBox.start + stblBox.headerSize, stblBox.start + stblBox.size, &stscBox);
+    
+    VideoBox stszBox = {0, 0, 0};
+    findType(bytes, "stsz", stblBox.start + stblBox.headerSize, stblBox.start + stblBox.size, &stszBox);
+    const uint8_t *stsz_ptr = bytes + stszBox.start + stszBox.headerSize + 4;
+    uint64_t per_sample_size = getNumberValue(stsz_ptr);
+    uint64_t sample_count = getNumberValue(stsz_ptr + 4);
+    
+    const uint8_t *stco_ptr = bytes + stcoBox.start + stcoBox.headerSize + 4;
+    uint64_t chunk_count = getNumberValue(stco_ptr);
+    
+    const uint8_t *stsc_ptr = bytes + stscBox.start + stscBox.headerSize + 4;
+    uint64_t stsc_count = getNumberValue(stsc_ptr);
+    
+    uint64_t totalSample = 0;
+    uint64_t stsc_index = 0;
+    for (int i = 1 ; i <= chunk_count; i++) {
+        uint64_t chunk_offset = getNumberValue(stco_ptr + 4 + (i - 1) * 4);
+        while (stsc_index + 1 < stsc_count) {
+            uint64_t next = getNumberValue(stsc_ptr + 4 + 12 * (stsc_index + 1));
+            if (i >= next) {
+                stsc_index++;
+            } else {
+                break;
+            }
+        }
+        uint64_t per_samples_chunk = getNumberValue(stsc_ptr + 4 + 12 * stsc_index + 4);
+        for (int j = 0; j < per_samples_chunk; j++) {
+            uint64_t sample_size = per_sample_size > 0 ? per_sample_size : getNumberValue(stsz_ptr + 8 + 4 * totalSample);
+            NSLog(@"sample_size %llu", sample_size);
+            totalSample++;
+        }
+    }
 }
 
 @end
